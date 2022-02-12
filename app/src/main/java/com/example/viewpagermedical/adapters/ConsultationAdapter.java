@@ -18,13 +18,13 @@ public class ConsultationAdapter extends RecyclerView.Adapter<ConsultationViewHo
     private ArrayList<Consultation>listConsultations;
     private OnImageClickedActionDeleted onImageClickedActionDeleted;
 
-    public ConsultationAdapter(ArrayList<Consultation> listConsultations, OnImageClickedActionDeleted onImageClickedActionDeleted) {
-        this.listConsultations = listConsultations;
+    public ConsultationAdapter(OnImageClickedActionDeleted onImageClickedActionDeleted) {
         this.onImageClickedActionDeleted = onImageClickedActionDeleted;
     }
 
     public void setListConsultations(ArrayList<Consultation> listConsultations) {
         this.listConsultations = listConsultations;
+        notifyDataSetChanged();
     }
 
     @NonNull

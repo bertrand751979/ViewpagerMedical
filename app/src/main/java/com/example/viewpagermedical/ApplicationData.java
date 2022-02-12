@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class ApplicationData {
     public Consultation hightRisk;
-    public Consultation displayList;
     public Consultation displaySymptoms;
     public ArrayList<Consultation> myRiskList = new ArrayList<>();
     public ArrayList<Consultation> myConsultationList = new ArrayList<>();
@@ -30,12 +29,20 @@ public class ApplicationData {
         return INSTANCE;
     }
 
-    public Consultation getDisplayList() {
-        return displayList;
+    public ArrayList<Consultation> getMyConsultationList() {
+        return myConsultationList;
     }
 
-    public void setDisplayList(Consultation displayList) {
-        this.displayList = displayList;
+    public void setMyConsultationList(ArrayList<Consultation> myConsultationList) {
+        this.myConsultationList = myConsultationList;
+    }
+
+    public ArrayList<Consultation> getMySearchList() {
+        return mySearchList;
+    }
+
+    public void setMySearchList(ArrayList<Consultation> mySearchList) {
+        this.mySearchList = mySearchList;
     }
 
     public Consultation getHightRisk() {
@@ -54,6 +61,21 @@ public class ApplicationData {
         this.displaySymptoms = displaySymptoms;
     }
 
+    public ArrayList<Consultation> getMyListSymptoms() {
+        return myListSymptoms;
+    }
+
+    public void setMyListSymptoms(ArrayList<Consultation> myListSymptoms) {
+        this.myListSymptoms = myListSymptoms;
+    }
+
+    public ArrayList<Consultation> getMyRiskList() {
+        return myRiskList;
+    }
+
+    public void setMyRiskList(ArrayList<Consultation> myRiskList) {
+        this.myRiskList = myRiskList;
+    }
 
     public void riskCovid(){
         myRiskList.clear();
@@ -77,9 +99,17 @@ public class ApplicationData {
             if(consultationSearch.getSymptom().toLowerCase().contains(researchSymptoms)){
                 searchResult = true;
                 mySearchList.add(consultationSearch);
+
             }
         }
         return searchResult;
+    }
+
+    public void addConsultation(Consultation consultation){
+        myConsultationList.add(consultation);
+    }
+    public void deleteConsultation(Consultation consultation){
+        myConsultationList.remove(consultation);
     }
 
 

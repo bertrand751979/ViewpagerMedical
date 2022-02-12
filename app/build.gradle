@@ -37,4 +37,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
+    // ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.4.0'
+    // LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.4.0'
+
+
+
 }

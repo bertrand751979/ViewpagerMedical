@@ -14,14 +14,15 @@ import com.example.viewpagermedical.viewHolders.ConsultationSymptomsViewHolder;
 import java.util.ArrayList;
 
 public class ConsultationSymptomAdapter extends RecyclerView.Adapter<ConsultationSymptomsViewHolder> {
-    private ArrayList<Consultation>theSymptomsList;
+    private ArrayList<Consultation> theSymptomsList = new ArrayList<>();
 
-    public ConsultationSymptomAdapter(ArrayList<Consultation> theSymptomsList) {
-        this.theSymptomsList = theSymptomsList;
+    public ConsultationSymptomAdapter() {
+
     }
 
     public void setTheSymptomsList(ArrayList<Consultation> theSymptomsList) {
         this.theSymptomsList = theSymptomsList;
+        notifyDataSetChanged();
     }
 
     @NonNull

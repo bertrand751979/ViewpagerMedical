@@ -14,14 +14,14 @@ import com.example.viewpagermedical.viewHolders.ConsultationRiskViewHolder;
 import java.util.ArrayList;
 
 public class ConsultationRiskAdapter extends RecyclerView.Adapter<ConsultationRiskViewHolder> {
-    private ArrayList<Consultation>listRiskConsultations;
+    private ArrayList<Consultation>listRiskConsultations = new ArrayList<>();
 
-    public ConsultationRiskAdapter(ArrayList<Consultation> listRiskConsultations) {
-        this.listRiskConsultations = listRiskConsultations;
+    public ConsultationRiskAdapter() {
     }
 
     public void setListRiskConsultations(ArrayList<Consultation> listRiskConsultations) {
         this.listRiskConsultations = listRiskConsultations;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -39,6 +39,7 @@ public class ConsultationRiskAdapter extends RecyclerView.Adapter<ConsultationRi
 
     @Override
     public int getItemCount() {
-        return listRiskConsultations.size();
+            return listRiskConsultations.size();
+
     }
 }
